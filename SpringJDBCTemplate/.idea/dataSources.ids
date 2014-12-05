@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="MySQL - @localhost" uuid="1bcc6d86-6cae-46ad-9190-05e4cafd330e">
+    <database-info product="MySQL" version="5.6.20" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="userdb"/>
+    <table name="trainers" schema="" catalog="userdb" type="TABLE">
+      <column name="trainer_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="NAME_TR" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="rank" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="salary" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="trainer_id"/>
+      <exported-key name="FK285FEB1976AC8F" table="user" schema="" catalog="userdb" columns="NAME_TR"/>
+      <index name="NAME_TR" unique="true" columns="NAME_TR"/>
+    </table>
+    <table name="user" schema="" catalog="userdb" type="TABLE">
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="first_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="gender" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="last_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="money" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="tr_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="NAME_TR" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="user_id"/>
+      <foreign-key name="FK285FEB1976AC8F" columns="NAME_TR" ref-table="trainers" ref-schema="" ref-catalog="userdb" ref-columns="NAME_TR" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK285FEB1976AC8F" unique="false" columns="NAME_TR"/>
+    </table>
+  </data-source>
+</component>
